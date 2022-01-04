@@ -33,9 +33,10 @@ if ($response === false) {
   var_dump([curl_error($curl), curl_errno($curl)]);
 }
 
-var_dump($response);
+$file = fopen($cmc_file_name, "w");
+fwrite($file, $response);
+fclose($file);
 
-print_r(json_decode($response)); // print json decoded response
 curl_close($curl); // Close request
 
 ?>
