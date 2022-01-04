@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 new \App\Support\Environment();
 
 
-$cmc_file_name = "./result.json";
+$cmc_file_name = "./results/result.json";
 if (!file_exists($cmc_file_name)) {
   include_once("cmcapi.php");
 }

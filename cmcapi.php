@@ -1,11 +1,37 @@
 <?php
 
+/*
+  "sort" must be one of [name, symbol, date_added, market_cap, market_cap_strict, price, circulating_supply, total_supply, max_supply, num_market_pairs, volume_24h, percent_change_1h, percent_change_24h, percent_change_7d, market_cap_by_total_supply_strict, volume_7d, volume_30d]
+*/
+
+/*
+  $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
+  // Recently added crypto currencies.
+  $parameters = [
+    'start' => '1',
+    'limit' => '50',
+    'convert' => 'USD',
+    'sort' => 'date_added',
+    'sort_dir' => 'desc',
+  ];
+*/
+
 $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
+// Recently added crypto currencies.
 $parameters = [
-  'start' => '1',
+  'start' => '5000',
   'limit' => '5000',
-  'convert' => 'USD'
+  'sort' => 'num_market_pairs',
+  'sort_dir' => 'asc',
 ];
+
+/*
+  $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
+  // Recently turned to visible currencies.
+  $parameters = [
+    'symbol' => 'SHIBADOLLARS',
+  ];
+*/
 
 $headers = [
   'Accepts: application/json',
