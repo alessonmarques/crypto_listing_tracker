@@ -59,7 +59,7 @@ if ($response === false) {
   var_dump([curl_error($curl), curl_errno($curl)]);
 }
 
-$file = fopen($cmc_file_name, "w");
+$file = fopen($file_name, "w");
 fwrite($file, $response);
 fclose($file);
 
